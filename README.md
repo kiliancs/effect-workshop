@@ -1,31 +1,22 @@
-# Effect Package Template
+# Effect Workshop
 
-This template provides a solid foundation for building scalable and maintainable TypeScript package with Effect. 
+Introductory explanations and exercises for Effect beginners.
 
-## Running Code
+This is a work in progress. I plan on adding new sections on a monthly basis.
 
-This template leverages [tsx](https://tsx.is) to allow execution of TypeScript files via NodeJS as if they were written in plain JavaScript.
+## Install
 
-To execute a file with `tsx`:
+1. Install [bun](https://bun.sh/)
+2. Clone this repo
+3. Inside the repo dir, run `bun install`
 
-```sh
-pnpm tsx ./path/to/the/file.ts
-```
+## Usage
 
-## Operations
+Under `/src`, each directory contains an `.exercise.ts` file, with small
+exercises with a similar theme. Try to complete them and verify by running `bun
+run test src/<dir-name>` (e.g. `bun run test src/schema-1`).
 
-**Building**
+Each of these directories also contains a `.solution.ts` file that you should
+try to not look at, and a `test.ts` file that is used to verify that you have
+completed the exercises successfully.
 
-To build the package:
-
-```sh
-pnpm build
-```
-
-**Testing**
-
-To test the package:
-
-```sh
-pnpm test
-```
