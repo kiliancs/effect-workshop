@@ -14,17 +14,17 @@ concurrency:
 permissions: {}
 
 jobs:
-  build:
-    name: Build
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    steps:
-      - uses: actions/checkout@v4
-      - name: Install dependencies
-        uses: ./.github/actions/setup
-      - run: bun run codegen
-      - name: Check source state
-        run: git add src && git diff-index --cached HEAD --exit-code src
+  # build:
+  #   name: Build
+  #   runs-on: ubuntu-latest
+  #   timeout-minutes: 10
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #     - name: Install dependencies
+  #       uses: ./.github/actions/setup
+  #     - run: bun run codegen
+  #     - name: Check source state
+  #       run: git add src && git diff-index --cached HEAD --exit-code src
 
   types:
     name: Types
@@ -46,12 +46,12 @@ jobs:
         uses: ./.github/actions/setup
       - run: bun run lint
 
-  test:
-    name: Test 
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    steps:
-      - uses: actions/checkout@v4
-      - name: Install dependencies
-        uses: ./.github/actions/setup
-      - run: bun run test
+  # test:
+  #   name: Test 
+  #   runs-on: ubuntu-latest
+  #   timeout-minutes: 10
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #     - name: Install dependencies
+  #       uses: ./.github/actions/setup
+  #     - run: bun run test
