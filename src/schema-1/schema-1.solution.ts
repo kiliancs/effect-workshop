@@ -23,7 +23,8 @@ const between30And50ErrorMessage = 'Please enter a value between 30 and 50';
 
 /**
  * A number (even non-int) between 30 and 50.
- * In case of failure, the error message will be "Please enter a value between 30 and 50".
+ * If the number is not between 30 and 50, the error message will be "Please enter a value between 30 and 50".
+ * But if the issue is that it's not a number to begin with, we'll leave Schema's default error message.
  */
 export const between30And50SchemaWithCustomMessage = Schema.Number.pipe(
   Schema.between(30, 50, { message: () => between30And50ErrorMessage }),
@@ -31,8 +32,7 @@ export const between30And50SchemaWithCustomMessage = Schema.Number.pipe(
 
 /**
  * A number between 30 and 50.
- * If the number is not between 30 and 50, the error message will be "Please enter a value between 30 and 50".
- * But if the issue is that it's not a number to begin with, the error message will be "Please enter a number".
+ * In all error cases, the error message will be "Please enter a value between 30 and 50".
  */
 export const between30And50SchemaWitMessageOverride = Schema.Number.pipe(
   Schema.between(30, 50, { message: () => ({ message: between30And50ErrorMessage, override: true }) }),

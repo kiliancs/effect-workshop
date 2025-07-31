@@ -1,7 +1,7 @@
 import { Schema } from 'effect';
 
 // For the following schema, you'll be asked to provide types and functions.
-// Do note re-implement the wheel. Find the utils Schema provides.
+// Do not re-implement the wheel. Find the utils Schema provides.
 export const personSchema = Schema.Struct({
   name: Schema.String,
   dob: Schema.DateTimeUtcFromDate,
