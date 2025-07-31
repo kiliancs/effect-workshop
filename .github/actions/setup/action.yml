@@ -6,7 +6,9 @@ runs:
   using: composite
   steps:
     - name: Install bun
-      uses: oven-sh/setup-bun
+      uses: oven-sh/setup-bun@v2
+      with:
+        bun-version: latest
 
     - name: Install dependencies
       shell: bash
